@@ -53,8 +53,7 @@ export default function WhatsAppChat() {
     };
 
     const scheduleNext = () => {
-      const current = messages[Math.min(index, messages.length - 1)];
-      const delay = current?.delay ?? 1200;
+      const delay = 3000; // 3s por mensagem
       timeout = window.setTimeout(step, delay);
     };
 
