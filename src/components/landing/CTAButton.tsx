@@ -11,6 +11,7 @@ interface Ripple {
 export default function CTAButton({ children, className, ...props }: ButtonProps) {
   const [ripple, setRipple] = useState<Ripple | null>(null);
   const [count, setCount] = useState(0);
+  const [pressed, setPressed] = useState(false);
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     const rect = (e.currentTarget as HTMLButtonElement).getBoundingClientRect();
@@ -27,7 +28,19 @@ export default function CTAButton({ children, className, ...props }: ButtonProps
       aria-label="Entrar na lista de espera"
       variant="cta"
       className={`relative overflow-hidden ${className ?? ""}`}
+      data-pressed={pressed ? "true" : "false"}
       onClick={handleClick}
+      onPointerDown={() => setPressed(true)}
+      onPointerUp={() => setPressed(false)}
+      onPointerCancel={() => setPressed(false)}
+      onPointerLeave={() => setPressed(false)}
+      onPointerOver={(e) => {
+        // Em dispositivos touch, ao deslizar o dedo sobre o botão, ativa o efeito
+        // Sem interferir com mouse (hover padrão já cobre)
+        // @ts-ignore pointerType existe no PointerEvent
+        if (e.pointerType && e.pointerType !== 'mouse') setPressed(true);
+      }}
+      onPointerOut={() => setPressed(false)}
       {...props}
     >
       {/* Ripple */}

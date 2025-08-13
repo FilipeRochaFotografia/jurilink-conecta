@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import CTAButton from "@/components/landing/CTAButton";
+import LeadCaptureDialog from "@/components/landing/LeadCaptureDialog";
+import FloatingShapes from "@/components/landing/FloatingShapes";
 import PhoneMockup from "@/components/landing/PhoneMockup";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, MessageSquare, Bot, FileText } from "lucide-react";
@@ -41,6 +43,7 @@ function useInViewCounter(target: number, duration = 1200) {
 
 export default function Index() {
   const [showSticky, setShowSticky] = useState(false);
+  const [leadOpen, setLeadOpen] = useState(false);
   useEffect(() => {
     const onScroll = () => setShowSticky(window.scrollY > 480);
     window.addEventListener("scroll", onScroll);
@@ -65,37 +68,30 @@ export default function Index() {
         })
       }} />
 
-      <header className="hero-bg border-b">
-        <nav className="container mx-auto flex items-center justify-between py-4" aria-label="Navegação principal">
-          <div className="flex items-center gap-2">
-            <div className="h-3 w-3 rounded-full bg-primary" aria-hidden />
-            <span className="text-sm font-semibold tracking-wide">True Rise</span>
-          </div>
-          <div className="hidden gap-6 md:flex">
-            <a href="#como-funciona" className="text-sm text-muted-foreground hover:text-foreground story-link">Como funciona</a>
-            <a href="#seguranca" className="text-sm text-muted-foreground hover:text-foreground story-link">Segurança</a>
-            <a href="#precos" className="text-sm text-muted-foreground hover:text-foreground story-link">Preços</a>
-            <a href="#contato" className="text-sm text-muted-foreground hover:text-foreground story-link">Contato</a>
-          </div>
-          <div className="hidden md:block">
-            <a href="#cta">
-              <Button variant="outline">Entrar na Lista</Button>
-            </a>
-          </div>
-        </nav>
+      <header className="relative border-b bg-white">
+        <FloatingShapes />
 
         {/* Hero */}
         <main>
           <section className="container mx-auto grid min-h-[92vh] grid-cols-1 items-center gap-12 py-10 md:grid-cols-2">
             {/* Left content */}
-            <div className="order-2 md:order-1">
+            <div className="order-1 md:order-1 text-center md:text-left">
+              {/* Mobile logo above title */}
+              <motion.img
+                src="/logo.png"
+                alt="True Rise"
+                className="mx-auto md:mx-0 mb-3 h-10 md:h-8"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease }}
+              />
               <motion.h1
-                className="text-4xl font-bold leading-tight md:text-5xl"
+                className="text-5xl md:text-6xl font-bold tracking-[-0.02em] leading-[1.02]"
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease }}
               >
-                IA Jurídica True Rise
+                IA Jurídica
               </motion.h1>
               <motion.p
                 className="mt-4 text-lg text-muted-foreground md:text-xl"
@@ -103,23 +99,22 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease, delay: 0.1 }}
               >
-                Seu escritório atendendo 24h no WhatsApp
+                Seu escritório de Advocacia atendendo 24h com conhecimento personalizado
               </motion.p>
 
               <motion.div
-                className="mt-8 flex flex-wrap items-center gap-4"
+                className="mt-8 hidden md:flex flex-wrap items-center gap-4"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease, delay: 0.2 }}
               >
-                <CTAButton className="h-12 px-6 text-base">
+                <CTAButton className="h-12 px-6 text-base" onClick={() => setLeadOpen(true)}>
                   Entrar na Lista de Espera
                 </CTAButton>
-                <a href="#como-funciona" className="text-sm story-link">Ver como funciona</a>
               </motion.div>
 
               <motion.div
-                className="mt-6 flex flex-wrap items-center gap-4 text-xs text-muted-foreground"
+                className="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs text-muted-foreground"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease, delay: 0.3 }}
@@ -128,20 +123,26 @@ export default function Index() {
                 <span>🔒 Dados protegidos</span>
                 <span>•</span>
                 <span>⚡ Ativa em 48h</span>
-                <span>•</span>
-                <span>🏆 Tecnologia premiada</span>
+                <span>🏆 IA Humanizada</span>
               </motion.div>
             </div>
 
             {/* Right mockup */}
             <motion.div
-              className="order-1 md:order-2"
+              className="order-2 md:order-2 md:justify-self-end"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease }}
             >
               <PhoneMockup />
             </motion.div>
+
+            {/* Mobile CTA under mockup */}
+            <div className="order-3 md:hidden flex justify-center">
+              <CTAButton className="h-12 px-6 text-base" onClick={() => setLeadOpen(true)}>
+                Entrar na Lista de Espera
+              </CTAButton>
+            </div>
           </section>
         </main>
       </header>
@@ -180,7 +181,7 @@ export default function Index() {
             </motion.div>
             <motion.div className="rounded-xl border bg-background p-6 shadow-sm hover-scale" whileHover={{ y: -2 }}>
               <Bot className="mb-3 h-6 w-6 text-primary" aria-hidden />
-              <h3 className="font-semibold">IA responde NA HORA</h3>
+              <h3 className="font-semibold">IA responde em poucos segundos</h3>
               <p className="mt-2 text-sm text-muted-foreground">Com conhecimento jurídico especializado</p>
             </motion.div>
             <motion.div className="rounded-xl border bg-background p-6 shadow-sm hover-scale" whileHover={{ y: -2 }}>
@@ -200,7 +201,7 @@ export default function Index() {
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease }}
           >
             <p className="text-lg md:text-xl">
-              “Achei que ia perder o toque pessoal. Mas agora tenho MAIS tempo para dar atenção real aos clientes nas consultas. Recuperamos 47 horas por mês.”
+              “Achei que ia perder o toque pessoal. Mas agora tenho MAIS tempo para dar atenção real aos clientes nas consultas.”
             </p>
             <footer className="mt-4 text-sm text-muted-foreground">— Dr. João Coelho, Vaz & Coelho Advogados</footer>
           </motion.blockquote>
@@ -235,8 +236,8 @@ export default function Index() {
               <p className="flex items-start gap-2"><span>❌</span> <span>Atendente: R$ 2.500/mês + encargos + férias</span></p>
             </div>
             <div className="rounded-xl border bg-background p-6">
-              <p className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-5 w-5 text-accent" aria-hidden /> <span>Sua IA Jurídica: R$ 500/mês</span></p>
-              <p className="mt-2 text-xs text-muted-foreground">Implementação única de R$ 2.500</p>
+              <p className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-5 w-5 text-accent" aria-hidden /> <span>Sua IA Jurídica: R$ 547/mês</span></p>
+              <p className="mt-2 text-xs text-muted-foreground">Implementação única de R$ 2.897</p>
             </div>
           </div>
         </div>
@@ -250,7 +251,7 @@ export default function Index() {
           </motion.h2>
           <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">Abrimos apenas 20 vagas por mês para garantir implementação perfeita</p>
           <div className="mt-8 flex justify-center">
-            <CTAButton className="h-12 px-8 text-base">Garantir Minha Vaga</CTAButton>
+            <CTAButton className="h-12 px-8 text-base" onClick={() => setLeadOpen(true)}>Garantir Minha Vaga</CTAButton>
           </div>
           <p className="mt-3 text-xs text-muted-foreground">Sem compromisso. Demonstração personalizada incluída.</p>
         </div>
@@ -260,7 +261,7 @@ export default function Index() {
       <footer id="contato" className="border-t py-10">
         <div className="container mx-auto">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-muted-foreground">© 2025 True Rise - Transformação Digital com IA</p>
+            <p className="text-sm text-muted-foreground">© 2025 True Rise - Transformação Digital Jurídica</p>
             <nav className="flex flex-wrap items-center gap-4 text-sm" aria-label="Links do rodapé">
               <a href="#" className="text-muted-foreground hover:text-foreground">Termos de Uso</a>
               <span className="text-muted-foreground">|</span>
@@ -278,10 +279,12 @@ export default function Index() {
       {showSticky && (
         <div className="fixed inset-x-0 bottom-0 z-50 block border-t bg-background/95 p-3 backdrop-blur md:hidden">
           <div className="container mx-auto">
-            <CTAButton className="h-12 w-full">Garantir Minha Vaga</CTAButton>
+            <CTAButton className="h-12 w-full" onClick={() => setLeadOpen(true)}>Garantir Minha Vaga</CTAButton>
           </div>
         </div>
       )}
+
+      <LeadCaptureDialog open={leadOpen} onOpenChange={setLeadOpen} />
     </div>
   );
 }

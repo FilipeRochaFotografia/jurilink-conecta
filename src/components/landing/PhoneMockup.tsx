@@ -1,12 +1,17 @@
+import { motion } from "framer-motion";
 import WhatsAppChat from "./WhatsAppChat";
 
 export default function PhoneMockup() {
   return (
-    <div className="mx-auto w-[320px] md:w-[360px]">
-      <div className="relative rounded-[2.5rem] border bg-card p-2 shadow-xl" aria-hidden>
+    <motion.div
+      className="mx-auto w-[280px] md:w-[320px]"
+      whileHover={{ y: -4 }}
+      transition={{ type: "spring", stiffness: 200, damping: 15 }}
+    >
+      <div className="relative rounded-[2.5rem] border bg-card p-1.5 shadow-xl">
         <WhatsAppChat />
         <div className="pointer-events-none absolute inset-0 rounded-[2.5rem] ring-1 ring-foreground/10" />
       </div>
-    </div>
+    </motion.div>
   );
 }
