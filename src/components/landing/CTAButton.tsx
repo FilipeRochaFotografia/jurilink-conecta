@@ -27,7 +27,7 @@ export default function CTAButton({ children, className, ...props }: ButtonProps
     <Button
       aria-label="Entrar na lista de espera"
       variant="cta"
-      className={`relative overflow-hidden ${className ?? ""}`}
+      className={`relative overflow-hidden bg-[#648c4d] hover:bg-white text-white hover:text-[#648c4d] ${className ?? ""}`}
       data-pressed={pressed ? "true" : "false"}
       onClick={handleClick}
       onPointerDown={() => setPressed(true)}
