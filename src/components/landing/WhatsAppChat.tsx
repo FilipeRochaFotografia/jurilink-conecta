@@ -8,15 +8,19 @@ export type ChatMessage = {
 };
 
 const baseMessages: Omit<ChatMessage, "id">[] = [
-  { from: "cliente", text: "Boa noite, preciso de ajuda com uma questão trabalhista" },
-  { from: "ia", text: "Boa noite! Sou a assistente jurídica do escritório Vaz & Coelho. Posso te ajudar com sua questão trabalhista. Pode me contar mais detalhes sobre o que aconteceu?" },
+  { from: "cliente", text: "Boa noite, tudo bem? Preciso de ajuda com uma questão trabalhista." },
+  { from: "ia", text: "Boa noite! Tudo bem e contigo? Sou a Sofia, atendente jurídica do escritório Vaz & Coelho." },
+  { from: "ia", text: "Pode me contar um pouco mais sobre sua situação?" },
   { from: "cliente", text: "Fui demitido sem justa causa após 3 anos..." },
-  { from: "ia", text: "Entendo sua situação. Na demissão sem justa causa, você tem direito a: aviso prévio, 13º proporcional, férias vencidas + 1/3, saldo FGTS + multa 40%. Gostaria de agendar uma consulta com o Dr. Vaz?" },
-  { from: "cliente", text: "Sim, por favor" },
-  { from: "ia", text: "Perfeito! Temos horários disponíveis amanhã às 10h ou 14h. Qual prefere?" },
-  { from: "cliente", text: "14h seria ótimo" },
-  { from: "ia", text: "✅ Consulta agendada! Amanhã, 14h com Dr. Vaz. Até amanhã!" },
+  { from: "ia", text: "Entendo. Na demissão sem justa causa, você tem direito a: Aviso prévio, 13º proporcional, Férias vencidas + 1/3, Saque do FGTS e multa de 40%." },
+  { from: "ia", text: "Gostaria que eu agendasse uma consulta com o Dr. Vaz para analisar seu caso com mais detalhes?" },
+  { from: "cliente", text: "Sim, por favor. Quando tem vaga?" },
+  { from: "ia", text: "Perfeito! Temos horários disponíveis amanhã, 20 de agosto, às 10h ou às 14h." },
+  { from: "ia", text: "Qual prefere?" },
+  { from: "cliente", text: "14h seria ótimo." },
+  { from: "ia", text: "✅ Consulta confirmada para amanhã, dia 20 de agosto, às 14h, com o Dr. Vaz." },
   { from: "cliente", text: "Muito obrigado, até amanhã!" },
+  { from: "ia", text: "Até amanhã! A Vaz & Coelho agradece a preferência." },
 ] as const;
 
 function TypingBubble() {

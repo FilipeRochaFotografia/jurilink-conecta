@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Calendar } from "lucide-react";
 
 import CTAButton from "@/components/landing/CTAButton";
 import LeadCaptureDialog from "@/components/landing/LeadCaptureDialog";
@@ -117,8 +118,9 @@ export default function Index() {
                 aria-label="Provas de segurança e rapidez"
               >
                 <span>🔒 Dados protegidos</span>
-                <span>•</span>
+                <span className="hidden md:inline">•</span>
                 <span>⚡ Ativa em 48h</span>
+                <span className="hidden md:inline">•</span>
                 <span>🏆 IA Humanizada</span>
               </motion.div>
             </div>
@@ -215,8 +217,17 @@ export default function Index() {
 
         <AnimatedSection delay={0.4} className="mt-8">
           <div className="text-center">
-            <p className="text-sm text-muted-foreground italic">
-              ⏰ A cada hora que passa, mais oportunidades são perdidas
+            <div className="mt-4 block md:hidden">
+              <span className="text-3xl">⏰</span>
+            </div>
+            <p className="text-base text-muted-foreground italic block md:hidden">
+              A cada hora que passa
+            </p>
+            <p className="text-base text-muted-foreground italic block md:hidden">
+              mais oportunidades são perdidas
+            </p>
+            <p className="text-base text-muted-foreground italic hidden md:flex items-center justify-center">
+              <span className="text-3xl mr-2">⏰</span> A cada hora que passa, mais oportunidades são perdidas
             </p>
           </div>
         </AnimatedSection>
@@ -254,16 +265,11 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-3 relative">
+          <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-4 relative">
             <AnimatedSection delay={0.1}>
               <EnhancedCard 
-                icon={
-                  <div className="relative">
-                    <MessageSquare className="h-8 w-8 text-primary" />
-                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                  </div>
-                }
-                className="text-center relative group border-primary/20 hover:border-primary/40 transition-all duration-300"
+                icon={<MessageSquare className="h-12 w-12 text-primary mx-auto" />}
+                className="text-center relative group border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="absolute top-4 right-4 text-xs font-bold text-primary/60 bg-primary/10 px-2 py-1 rounded-full">
                   1
@@ -280,19 +286,10 @@ export default function Index() {
               </EnhancedCard>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.3}>
+            <AnimatedSection delay={0.2}>
               <EnhancedCard 
-                icon={
-                  <div className="relative">
-                    <Bot className="h-8 w-8 text-primary" />
-                    <motion.div 
-                      className="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full"
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    />
-                  </div>
-                }
-                className="text-center relative group border-primary/20 hover:border-primary/40 transition-all duration-300"
+                icon={<Bot className="h-12 w-12 text-primary mx-auto" />}
+                className="text-center relative group border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="absolute top-4 right-4 text-xs font-bold text-primary/60 bg-primary/10 px-2 py-1 rounded-full">
                   2
@@ -309,18 +306,33 @@ export default function Index() {
               </EnhancedCard>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.5}>
+            <AnimatedSection delay={0.3}>
               <EnhancedCard 
-                icon={
-                  <div className="relative">
-                    <FileText className="h-8 w-8 text-primary" />
-                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-orange-500 rounded-full animate-bounce" />
-                  </div>
-                }
-                className="text-center relative group border-primary/20 hover:border-primary/40 transition-all duration-300"
+                icon={<Calendar className="h-12 w-12 text-primary mx-auto" />}
+                className="text-center relative group border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="absolute top-4 right-4 text-xs font-bold text-primary/60 bg-primary/10 px-2 py-1 rounded-full">
                   3
+                </div>
+                <div className="space-y-3 pt-2">
+                  <h3 className="text-lg md:text-xl font-bold">IA faz a marcação</h3>
+                  <p className="text-sm md:text-base text-muted-foreground">
+                    Marca no Google Calendar e prepara um resumo da conversa
+                  </p>
+                  <div className="text-xs text-primary font-medium bg-primary/5 px-3 py-1 rounded-full inline-block">
+                    📅 Organizado
+                  </div>
+                </div>
+              </EnhancedCard>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.4}>
+              <EnhancedCard 
+                icon={<FileText className="h-12 w-12 text-primary mx-auto" />}
+                className="text-center relative group border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="absolute top-4 right-4 text-xs font-bold text-primary/60 bg-primary/10 px-2 py-1 rounded-full">
+                  4
                 </div>
                 <div className="space-y-3 pt-2">
                   <h3 className="text-lg md:text-xl font-bold">Você recebe o resumo</h3>
@@ -328,7 +340,7 @@ export default function Index() {
                     Preparado e organizado para a consulta agendada
                   </p>
                   <div className="text-xs text-primary font-medium bg-primary/5 px-3 py-1 rounded-full inline-block">
-                    📋 Organizado
+                    📄 Detalhado
                   </div>
                 </div>
               </EnhancedCard>
@@ -338,9 +350,13 @@ export default function Index() {
 
         <AnimatedSection delay={0.7} className="mt-12">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
-              <CheckCircle2 className="h-4 w-4" />
-              Processo 100% automatizado e seguro
+            <div className="flex items-center justify-center rounded-md bg-green-100 p-2 shadow-sm hover:shadow-md transition-shadow duration-300 whitespace-nowrap max-w-md mx-auto">
+              <span className="text-green-700 text-sm font-medium flex items-center">
+                <svg className="w-4 h-4 mr-1 text-green-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Processo 100% automatizado e seguro
+              </span>
             </div>
           </div>
         </AnimatedSection>
@@ -380,6 +396,10 @@ export default function Index() {
                 </div>
 
                 <div className="space-y-3">
+                  <div className="text-center">
+                    <div className="w-16 h-0.5 bg-red-600 mx-auto" />
+                  </div>
+
                   <div className="text-center">
                     <div className="text-2xl font-bold text-red-700">R$ 2.500</div>
                     <div className="text-xs text-red-600">por mês + encargos</div>
@@ -436,6 +456,10 @@ export default function Index() {
 
                 <div className="space-y-3">
                   <div className="text-center">
+                    <div className="w-16 h-0.5 bg-green-600 mx-auto" />
+                  </div>
+
+                  <div className="text-center">
                     <div className="text-2xl font-bold text-green-700">R$ 547</div>
                     <div className="text-xs text-green-600">por mês, tudo incluso</div>
                   </div>
@@ -472,6 +496,12 @@ export default function Index() {
           </AnimatedSection>
         </div>
 
+        {/* Small CTA Button */}
+        <div className="mt-8 flex justify-center">
+          <CTAButton className="h-10 px-6 text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300" onClick={() => setLeadOpen(true)}>
+            Receba sua demonstração
+          </CTAButton>
+        </div>
       </SectionContainer>
 
       {/* Final CTA */}
@@ -576,19 +606,19 @@ export default function Index() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 text-xs md:text-sm text-gray-600">
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span>Implementação personalizada</span>
+                      <span className="text-sm md:text-base">Implementação personalizada</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span>Suporte dedicado 1:1</span>
+                      <span className="text-sm md:text-base">Suporte dedicado 1:1</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span>Treinamento completo da equipe</span>
+                      <span className="text-sm md:text-base">Treinamento completo da equipe</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span>Garantia de resultados</span>
+                      <span className="text-sm md:text-base">Garantia de resultados</span>
                     </div>
                   </div>
                 </div>
