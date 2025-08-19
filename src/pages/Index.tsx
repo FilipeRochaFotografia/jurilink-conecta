@@ -630,19 +630,8 @@ export default function Index() {
 
       {/* Footer */}
       <footer id="contato" className="border-t py-10">
-        <div className="container mx-auto">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-muted-foreground">© 2025 True Rise - Transformação Digital Jurídica</p>
-            <nav className="flex flex-wrap items-center gap-4 text-sm" aria-label="Links do rodapé">
-              <a href="#" className="text-muted-foreground hover:text-foreground">Termos de Uso</a>
-              <span className="text-muted-foreground">|</span>
-              <a href="#" className="text-muted-foreground hover:text-foreground">Política de Privacidade</a>
-              <span className="text-muted-foreground">|</span>
-              <a href="#" className="text-muted-foreground hover:text-foreground">Contato</a>
-              <span className="text-muted-foreground">|</span>
-              <span className="text-muted-foreground">WhatsApp: (11) 99999-9999</span>
-            </nav>
-          </div>
+        <div className="container mx-auto text-center">
+          <p className="text-sm text-muted-foreground">© 2025 True Rise - Transformação Digital</p>
         </div>
       </footer>
 
