@@ -427,7 +427,7 @@ export default function Index() {
                   <div className="bg-red-100 p-3 rounded-lg border border-red-200">
                     <div className="text-center">
                       <div className="text-sm font-bold text-red-800">Custo Real Anual</div>
-                      <div className="text-xl font-bold text-red-700">R$ 45.000+</div>
+                      <div className="text-xl font-bold text-red-700">R$ 40.000+</div>
                       <div className="text-xs text-red-600">Incluindo todos os encargos</div>
                     </div>
                   </div>
@@ -460,34 +460,33 @@ export default function Index() {
                   </div>
 
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-green-700">R$ 547</div>
-                    <div className="text-xs text-green-600">por mês, tudo incluso</div>
+                    <p className="text-base font-bold text-green-800">Muito mais benefícios<br />por uma fração do custo</p>
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-green-700">
-                      <CheckCircle2 className="w-3 h-3 flex-shrink-0" />
-                      <span className="text-xs">Atendimento 24h por dia, 7 dias</span>
+                  <div className="space-y-2 text-left">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span className="text-xs text-green-700 whitespace-nowrap">Atendimento 24h por dia, 7 dias por semana</span>
                     </div>
-                    <div className="flex items-center gap-2 text-green-700">
-                      <CheckCircle2 className="w-3 h-3 flex-shrink-0" />
-                      <span className="text-xs">Sem férias, sem faltas, sem 13º</span>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span className="text-xs text-green-700 whitespace-nowrap">Sem férias, sem faltas, sem encargos</span>
                     </div>
-                    <div className="flex items-center gap-2 text-green-700">
-                      <CheckCircle2 className="w-3 h-3 flex-shrink-0" />
-                      <span className="text-xs">Sempre disponível e atualizada</span>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span className="text-xs text-green-700 whitespace-nowrap">Sempre disponível e atualizada</span>
                     </div>
-                    <div className="flex items-center gap-2 text-green-700">
-                      <CheckCircle2 className="w-3 h-3 flex-shrink-0" />
-                      <span className="text-xs">Conhecimento jurídico especializado</span>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
+                      <span className="text-xs text-green-700 whitespace-nowrap">Conhecimento jurídico especializado</span>
                     </div>
                   </div>
 
                   <div className="bg-green-100 p-3 rounded-lg border border-green-200">
                     <div className="text-center">
-                      <div className="text-sm font-bold text-green-800">Custo Total Anual</div>
-                      <div className="text-xl font-bold text-green-700">R$ 6.564</div>
-                      <div className="text-xs text-green-600">Setup único: R$ 2.897</div>
+                      <div className="text-sm font-bold text-green-800">Economia Real Anual</div>
+                      <div className="text-xl font-bold text-green-600">Até 80% menos</div>
+                      <div className="text-xs text-green-600">Veja quanto pode economizar</div>
                     </div>
                   </div>
                 </div>
@@ -498,8 +497,8 @@ export default function Index() {
 
         {/* Small CTA Button */}
         <div className="mt-8 flex justify-center">
-          <CTAButton className="h-10 px-6 text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300" onClick={() => setLeadOpen(true)}>
-            Receba sua demonstração
+          <CTAButton className="h-12 px-8 text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300" onClick={() => setLeadOpen(true)}>
+            Solicite sua demonstração
           </CTAButton>
         </div>
       </SectionContainer>
