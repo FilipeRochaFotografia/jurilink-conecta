@@ -106,7 +106,7 @@ export default function Index() {
                 transition={{ duration: 0.6, ease, delay: 0.2 }}
               >
                 <CTAButton className="h-14 md:h-16 px-8 md:px-12 text-lg md:text-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300" onClick={() => setLeadOpen(true)}>
-                  Quero a atendente IA Jurídica
+                  Quero uma atendente IA
                 </CTAButton>
               </motion.div>
 
@@ -138,7 +138,7 @@ export default function Index() {
             {/* Mobile CTA under mockup */}
             <div className="order-3 md:hidden flex justify-center">
               <CTAButton className="h-14 md:h-16 px-8 md:px-12 text-lg md:text-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300" onClick={() => setLeadOpen(true)}>
-                Quero a atendente IA Jurídica
+                Quero uma atendente IA
               </CTAButton>
             </div>
           </section>
@@ -533,8 +533,10 @@ export default function Index() {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                     Vagas limitadas
                   </h2>
-                  <p className="mt-3 md:mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 md:px-0">
-                    Abrimos apenas <span className="font-bold text-primary">20 vagas por mês</span> para garantir implementação perfeita
+                  <p className="mt-3 md:mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 md:px-0 whitespace-nowrap">
+                    Abrimos apenas <span className="text-green-600 font-bold">20 vagas por mês</span>
+                    <br className="block md:hidden" />
+                    para garantir implementação perfeita
                   </p>
                 </div>
               </div>
@@ -545,26 +547,26 @@ export default function Index() {
               <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto">
                 <div className="text-center space-y-2">
                   <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto">
-                    <Users className="w-8 h-8 text-red-600" />
+                    <Users className="h-8 w-8 text-red-500" />
                   </div>
-                  <div className="text-2xl font-bold text-red-600">17</div>
-                  <div className="text-sm text-muted-foreground">vagas já preenchidas</div>
+                  <p className="text-2xl font-bold text-red-600">5</p>
+                  <p className="text-sm text-muted-foreground">vagas já preenchidas na semana</p>
                 </div>
                 
                 <div className="text-center space-y-2">
                   <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
-                    <Clock className="w-8 h-8 text-orange-600" />
+                    <Clock className="h-8 w-8 text-orange-500" />
                   </div>
-                  <div className="text-2xl font-bold text-orange-600">3</div>
-                  <div className="text-sm text-muted-foreground">vagas restantes</div>
+                  <p className="text-2xl font-bold text-orange-600">0</p>
+                  <p className="text-sm text-muted-foreground">vagas restantes na semana</p>
                 </div>
                 
                 <div className="text-center space-y-2">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
-                    <Sparkles className="w-8 h-8 text-green-600" />
+                    <Sparkles className="h-8 w-8 text-green-500" />
                   </div>
-                  <div className="text-2xl font-bold text-green-600">48h</div>
-                  <div className="text-sm text-muted-foreground">para ativação</div>
+                  <p className="text-2xl font-bold text-green-600">2</p>
+                  <p className="text-sm text-muted-foreground">escritórios na fila</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -583,14 +585,14 @@ export default function Index() {
                     onClick={() => setLeadOpen(true)}
                   >
                     <span className="flex items-center justify-center gap-2 md:gap-3">
-                      Quero garantir minha IA agora
+                      Quero entrar na fila de espera
                     </span>
                   </CTAButton>
                 </motion.div>
 
                 <div className="space-y-2 px-4 md:px-0">
                   <p className="text-xs md:text-sm text-muted-foreground">
-                    ✅ Sem compromisso • ✅ Demonstração personalizada incluída
+                    ✅ Sem compromisso ✅ Demonstração personalizada incluída
                   </p>
                 </div>
               </div>
@@ -598,26 +600,33 @@ export default function Index() {
 
             {/* Trust Elements */}
             <AnimatedSection delay={0.6} className="mt-8 md:mt-12">
-              <div className="bg-gray-50 rounded-2xl p-4 md:p-6 max-w-2xl mx-auto">
-                <div className="text-center space-y-3 md:space-y-4">
-                  <h3 className="text-base md:text-lg font-bold text-gray-800">Por que limitamos as vagas?</h3>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 text-xs md:text-sm text-gray-600">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Implementação personalizada</span>
+              <div className="bg-gray-50 rounded-2xl p-6 max-w-3xl mx-auto">
+                <div className="flex flex-col items-center justify-center space-y-4">
+                  <h2 className="text-lg font-bold text-center">Por que limitamos as vagas?</h2>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="flex items-center space-x-2">
+                      <svg className="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Implementação personalizada</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Suporte dedicado 1:1</span>
+                    <div className="flex items-center space-x-2">
+                      <svg className="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Treinamento completo da equipe</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Treinamento completo da equipe</span>
+                    <div className="flex items-center space-x-2">
+                      <svg className="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Suporte dedicado 1:1</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-sm md:text-base">Garantia de resultados</span>
+                    <div className="flex items-center space-x-2">
+                      <svg className="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Garantia de resultados</span>
                     </div>
                   </div>
                 </div>
