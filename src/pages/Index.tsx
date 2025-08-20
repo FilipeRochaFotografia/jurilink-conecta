@@ -70,7 +70,7 @@ export default function Index() {
 
         {/* Hero */}
         <main>
-          <section className="container mx-auto grid min-h-[92vh] grid-cols-1 items-center gap-12 py-10 md:grid-cols-2">
+          <section className="container mx-auto grid min-h-[92vh] grid-cols-1 items-center gap-4 py-6 md:grid-cols-2">
             {/* Left content */}
             <div className="order-1 md:order-1 text-center md:text-left">
               {/* Mobile logo above title */}
@@ -100,18 +100,7 @@ export default function Index() {
               </motion.p>
 
               <motion.div
-                className="mt-8 hidden md:flex flex-wrap items-center gap-4"
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease, delay: 0.2 }}
-              >
-                <CTAButton className="h-14 md:h-16 px-8 md:px-12 text-lg md:text-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300" onClick={() => setLeadOpen(true)}>
-                  Quero uma atendente IA
-                </CTAButton>
-              </motion.div>
-
-              <motion.div
-                className="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs text-muted-foreground"
+                className="mt-4 flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs text-muted-foreground"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease, delay: 0.3 }}
@@ -127,7 +116,7 @@ export default function Index() {
 
             {/* Right mockup */}
             <motion.div
-              className="order-2 md:order-2 md:justify-self-end"
+              className="order-2 md:order-2 md:justify-self-end mt-2"
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease }}
@@ -136,9 +125,9 @@ export default function Index() {
             </motion.div>
 
             {/* Mobile CTA under mockup */}
-            <div className="order-3 md:hidden flex justify-center">
-              <CTAButton className="h-14 md:h-16 px-8 md:px-12 text-lg md:text-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300" onClick={() => setLeadOpen(true)}>
-                Quero uma atendente IA
+            <div className="order-3 md:hidden flex justify-center mt-2">
+              <CTAButton className="h-12 px-6 text-base font-bold shadow-lg hover:shadow-xl transition-all duration-300" onClick={() => setLeadOpen(true)}>
+                Quero uma atendente com IA
               </CTAButton>
             </div>
           </section>
@@ -466,7 +455,7 @@ export default function Index() {
                   <div className="space-y-2 text-left">
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-xs text-green-700 whitespace-nowrap">Atendimento 24h por dia, 7 dias por semana</span>
+                      <span className="text-xs text-green-700 whitespace-nowrap">Atendimento 24h, 7 dias por semana</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
@@ -533,10 +522,8 @@ export default function Index() {
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                     Vagas limitadas
                   </h2>
-                  <p className="mt-3 md:mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 md:px-0 whitespace-nowrap">
-                    Abrimos apenas <span className="text-green-600 font-bold">20 vagas por mês</span>
-                    <br className="block md:hidden" />
-                    para garantir implementação perfeita
+                  <p className="mt-3 md:mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 md:px-0 text-center">
+                    Abrimos apenas <span className="text-green-600 font-bold">20 vagas por mês</span> para garantir implementação perfeita
                   </p>
                 </div>
               </div>

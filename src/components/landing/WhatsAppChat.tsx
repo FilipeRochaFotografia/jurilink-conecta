@@ -45,7 +45,7 @@ export default function WhatsAppChat() {
   const [typingFrom, setTypingFrom] = useState<"cliente" | "ia" | null>("ia");
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Reveal messages every 4s and loop after a 20s pause when the conversation ends
+  // Reveal messages every 500ms and loop after a 20s pause when the conversation ends
   useEffect(() => {
     let isMounted = true;
     let timeout: number | undefined;
@@ -53,12 +53,12 @@ export default function WhatsAppChat() {
     const schedule = () => {
       const isFinished = index >= messages.length;
       if (isFinished) {
-        // Wait 20s, then restart
+        // Wait 10s, then restart
         timeout = window.setTimeout(() => {
           if (!isMounted) return;
           setIndex(1);
           setShowTyping(true);
-        }, 20000);
+        }, 10000);
         return;
       }
 
@@ -70,7 +70,7 @@ export default function WhatsAppChat() {
         if (!isMounted) return;
         setShowTyping(false);
         setIndex((v) => v + 1);
-      }, 4000);
+      }, 2500); // Updated delay to 2.5 seconds
     };
 
     schedule();
