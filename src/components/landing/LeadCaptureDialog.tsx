@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -9,19 +9,13 @@ import { useToast } from "@/components/ui/use-toast";
 type LeadCaptureDialogProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  formspreeFormId?: string;
-  useAirtableApi?: boolean;
 };
 
-export default function LeadCaptureDialog({ open, onOpenChange, formspreeFormId, useAirtableApi }: LeadCaptureDialogProps) {
+export default function LeadCaptureDialog({ open, onOpenChange }: LeadCaptureDialogProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const formId = useMemo(() => {
-    return (
-      formspreeFormId || (import.meta.env.VITE_FORMSPREE_FORM_ID as string | undefined) || "YOUR_FORMSPREE_ID"
-    );
-  }, [formspreeFormId]);
+  const formId = "xldlqrnn"; // Seu Form ID do Formspree
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -41,30 +35,21 @@ export default function LeadCaptureDialog({ open, onOpenChange, formspreeFormId,
 
     try {
       setIsSubmitting(true);
-      const res = await (async () => {
-        if (useAirtableApi) {
-          return fetch(`/api/airtable-lead`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          });
-        }
-        if (!formId || formId === "YOUR_FORMSPREE_ID") {
-          throw new Error("VITE_FORMSPREE_FORM_ID não configurado");
-        }
-        return fetch(`https://formspree.io/f/${formId}`, {
-          method: "POST",
-          headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        });
-      })();
+      
+      const res = await fetch(`https://formspree.io/f/${formId}`, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
       if (res.ok) {
         toast({ title: "Recebido!", description: "Entraremos em contato para agendar a demonstração." });
         onOpenChange(false);
+        // Reset form
+        event.currentTarget.reset();
       } else {
         const data = await res.json().catch(() => ({}));
         const msg = data?.errors?.[0]?.message || "Não foi possível enviar. Tente novamente.";
