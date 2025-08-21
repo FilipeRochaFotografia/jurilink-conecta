@@ -48,8 +48,6 @@ export default function LeadCaptureDialog({ open, onOpenChange }: LeadCaptureDia
       if (res.ok) {
         toast({ title: "Recebido!", description: "Entraremos em contato para agendar a demonstração." });
         onOpenChange(false);
-        // Reset form
-        event.currentTarget.reset();
       } else {
         const data = await res.json().catch(() => ({}));
         const msg = data?.errors?.[0]?.message || "Não foi possível enviar. Tente novamente.";
