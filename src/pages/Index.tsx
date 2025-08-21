@@ -376,9 +376,9 @@ export default function Index() {
           </p>
         </AnimatedSection>
 
-        <div className="mt-8 md:mt-12 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto">
+        <div className="mt-8 md:mt-12 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto justify-items-center">
           {/* Traditional Option */}
-          <AnimatedSection delay={0.1}>
+          <AnimatedSection delay={0.1} className="w-full max-w-sm md:max-w-none">
             <EnhancedCard className="relative border-red-200 bg-gradient-to-br from-red-50 to-red-100/50 shadow-lg hover:shadow-xl transition-all duration-300">
               {/* Negative Badge */}
               <div className="absolute -top-3 left-6 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
@@ -436,7 +436,7 @@ export default function Index() {
           </AnimatedSection>
 
           {/* AI Solution */}
-          <AnimatedSection delay={0.2}>
+          <AnimatedSection delay={0.2} className="w-full max-w-sm md:max-w-none">
             <EnhancedCard className="relative border-green-200 bg-gradient-to-br from-green-50 to-green-100/50 shadow-lg hover:shadow-xl transition-all duration-300">
               {/* Recommended Badge */}
               <div className="absolute -top-3 left-6 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
@@ -465,19 +465,19 @@ export default function Index() {
                   <div className="space-y-2 text-left">
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-xs text-green-700 whitespace-nowrap">Atendimento 24h, 7 dias por semana</span>
+                      <span className="text-xs text-green-700">Disponível 24/7</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-xs text-green-700 whitespace-nowrap">Sem férias, sem faltas, sem encargos</span>
+                      <span className="text-xs text-green-700">Sem férias, sem faltas</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-xs text-green-700 whitespace-nowrap">Sempre disponível e atualizada</span>
+                      <span className="text-xs text-green-700">Sem encargos</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-xs text-green-700 whitespace-nowrap">Conhecimento jurídico especializado</span>
+                      <span className="text-xs text-green-700">Conhecimento especializado</span>
                     </div>
                   </div>
 
