@@ -537,7 +537,14 @@ export default function Index() {
                     Vagas limitadas
                   </h2>
                   <p className="mt-3 md:mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 md:px-0 text-center">
-                    Abrimos apenas <span className="text-green-600 font-bold">20 vagas por mês</span> para garantir implementação perfeita
+                    <span className="md:hidden block">
+                      Abrimos apenas<br />
+                      <span className="text-green-600 font-bold">20 vagas por mês</span><br />
+                      Para garantir perfeição
+                    </span>
+                    <span className="hidden md:block">
+                      Abrimos apenas <span className="text-green-600 font-bold">20 vagas por mês</span> para garantir implementação perfeita
+                    </span>
                   </p>
                 </div>
               </div>
@@ -593,7 +600,13 @@ export default function Index() {
 
                 <div className="space-y-2 px-4 md:px-0">
                   <p className="text-xs md:text-sm text-muted-foreground">
-                    ✅ Sem compromisso ✅ Demonstração personalizada incluída
+                    <span className="md:hidden block">
+                      ✅ Sem compromisso<br />
+                      ✅ Demonstração personalizada incluída
+                    </span>
+                    <span className="hidden md:block">
+                      ✅ Sem compromisso ✅ Demonstração personalizada incluída
+                    </span>
                   </p>
                 </div>
               </div>
