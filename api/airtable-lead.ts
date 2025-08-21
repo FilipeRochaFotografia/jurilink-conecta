@@ -32,9 +32,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     try { body = JSON.parse(body); } catch { body = {}; }
   }
 
-  const { name, email, whatsapp, message, page } = body || {};
+  const { name, businessName, email, whatsapp, bestTimeToContact, page } = body || {};
 
-  if (!name || !email || !whatsapp) {
+  if (!name || !businessName || !email || !whatsapp || !bestTimeToContact) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
@@ -49,9 +49,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       body: JSON.stringify({
         fields: {
           Name: name,
+          BusinessName: businessName,
           Email: email,
           Whatsapp: whatsapp,
-          Message: message ?? "",
+          BestTimeToContact: bestTimeToContact,
           Page: page ?? "",
           Source: "Landing True Rise",
           Status: "Novo",

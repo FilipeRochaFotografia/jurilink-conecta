@@ -32,9 +32,10 @@ export default function LeadCaptureDialog({ open, onOpenChange, formspreeFormId,
 
     const payload = {
       name: String(formData.get("name") || ""),
+      businessName: String(formData.get("businessName") || ""),
       email: String(formData.get("email") || ""),
       whatsapp: String(formData.get("whatsapp") || ""),
-      message: String(formData.get("message") || ""),
+      bestTimeToContact: String(formData.get("bestTimeToContact") || ""),
       page: typeof window !== "undefined" ? window.location.href : "",
     };
 
@@ -91,7 +92,12 @@ export default function LeadCaptureDialog({ open, onOpenChange, formspreeFormId,
 
           <div className="grid gap-2">
             <Label htmlFor="name">Nome completo</Label>
-            <Input id="name" name="name" placeholder="Seu nome" required />
+            <Input id="name" name="name" placeholder="Seu nome completo" required />
+          </div>
+
+          <div className="grid gap-2">
+            <Label htmlFor="businessName">Nome comercial</Label>
+            <Input id="businessName" name="businessName" placeholder="Pessoal ou do Escritório" required />
           </div>
 
           <div className="grid gap-2">
@@ -105,8 +111,8 @@ export default function LeadCaptureDialog({ open, onOpenChange, formspreeFormId,
           </div>
 
           <div className="grid gap-2">
-            <Label htmlFor="message">Como podemos ajudar?</Label>
-            <Textarea id="message" name="message" placeholder="Conte brevemente seu contexto" rows={4} />
+            <Label htmlFor="bestTimeToContact">Qual o melhor horário para ser contactado?</Label>
+            <Input id="bestTimeToContact" name="bestTimeToContact" placeholder="Ex: Manhã (9h-12h), Tarde (14h-18h)" required />
           </div>
 
           <Button type="submit" className="w-full" disabled={isSubmitting}>
