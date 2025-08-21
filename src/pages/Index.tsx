@@ -351,14 +351,12 @@ export default function Index() {
 
         <AnimatedSection delay={0.7} className="mt-12">
           <div className="text-center">
-            <div className="flex items-center justify-center rounded-md bg-green-100 p-2 shadow-sm hover:shadow-md transition-shadow duration-300 whitespace-nowrap max-w-md mx-auto">
-              <span className="text-green-700 text-sm font-medium flex items-center">
-                <svg className="w-4 h-4 mr-1 text-green-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Processo 100% automatizado e seguro
-              </span>
-            </div>
+            <CTAButton 
+              className="h-12 px-8 text-base font-bold shadow-lg hover:shadow-xl transition-all duration-300" 
+              onClick={() => setLeadOpen(true)}
+            >
+              Quero implementar também
+            </CTAButton>
           </div>
         </AnimatedSection>
       </SectionContainer>
