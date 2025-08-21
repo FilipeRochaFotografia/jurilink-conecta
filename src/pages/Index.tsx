@@ -476,7 +476,7 @@ export default function Index() {
                       </div>
                       <div className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm md:text-base text-green-700">Sem encargos</span>
+                        <span className="text-sm md:text-base text-green-700">Sempre disponível</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
