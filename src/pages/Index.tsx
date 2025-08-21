@@ -112,6 +112,18 @@ export default function Index() {
                 <span className="hidden md:inline">•</span>
                 <span>🏆 IA Humanizada</span>
               </motion.div>
+
+              {/* Desktop/Tablet CTA */}
+              <motion.div
+                className="hidden md:flex justify-start mt-6"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease, delay: 0.4 }}
+              >
+                <CTAButton className="h-12 px-8 text-base font-bold shadow-lg hover:shadow-xl transition-all duration-300" onClick={() => setLeadOpen(true)}>
+                  Quero uma atendente com IA
+                </CTAButton>
+              </motion.div>
             </div>
 
             {/* Right mockup */}
