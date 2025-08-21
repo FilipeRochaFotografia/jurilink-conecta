@@ -404,22 +404,22 @@ export default function Index() {
                     <div className="text-xs text-red-600">por mês + encargos</div>
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-red-700">
+                  <div className="space-y-2 text-left md:text-center">
+                    <div className="flex items-center gap-2 text-red-700 md:justify-center">
                       <X className="w-3 h-3 flex-shrink-0" />
-                      <span className="text-xs">Só funciona em horário comercial</span>
+                      <span className="text-sm md:text-base">Só funciona em horário comercial</span>
                     </div>
-                    <div className="flex items-center gap-2 text-red-700">
+                    <div className="flex items-center gap-2 text-red-700 md:justify-center">
                       <X className="w-3 h-3 flex-shrink-0" />
-                      <span className="text-xs">Férias, 13º salário, FGTS</span>
+                      <span className="text-sm md:text-base">Férias, 13º salário, FGTS</span>
                     </div>
-                    <div className="flex items-center gap-2 text-red-700">
+                    <div className="flex items-center gap-2 text-red-700 md:justify-center">
                       <X className="w-3 h-3 flex-shrink-0" />
-                      <span className="text-xs">Pode faltar ou sair da empresa</span>
+                      <span className="text-sm md:text-base">Pode faltar ou sair da empresa</span>
                     </div>
-                    <div className="flex items-center gap-2 text-red-700">
+                    <div className="flex items-center gap-2 text-red-700 md:justify-center">
                       <X className="w-3 h-3 flex-shrink-0" />
-                      <span className="text-xs">Conhecimento limitado</span>
+                      <span className="text-sm md:text-base">Conhecimento limitado</span>
                     </div>
                   </div>
 
@@ -462,22 +462,22 @@ export default function Index() {
                     <p className="text-base font-bold text-green-800">Muito mais benefícios<br />por uma fração do custo</p>
                   </div>
 
-                  <div className="space-y-2 text-left">
-                    <div className="flex items-center gap-2">
+                  <div className="space-y-2 text-left md:text-center">
+                    <div className="flex items-center gap-2 md:justify-center">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-xs text-green-700">Disponível 24/7</span>
+                      <span className="text-sm md:text-base text-green-700">Disponível 24/7</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 md:justify-center">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-xs text-green-700">Sem férias, sem faltas</span>
+                      <span className="text-sm md:text-base text-green-700">Sem férias, sem faltas</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 md:justify-center">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-xs text-green-700">Sem encargos</span>
+                      <span className="text-sm md:text-base text-green-700">Sem encargos</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 md:justify-center">
                       <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-xs text-green-700">Conhecimento especializado</span>
+                      <span className="text-sm md:text-base text-green-700">Conhecimento especializado</span>
                     </div>
                   </div>
 
