@@ -646,6 +646,17 @@ export default function Index() {
                 </div>
               </div>
             </AnimatedSection>
+
+            {/* True Rise Logo */}
+            <AnimatedSection delay={0.8} className="mt-6 md:mt-8">
+              <div className="flex justify-center">
+                <img 
+                  src="/logo.png" 
+                  alt="True Rise" 
+                  className="h-8 md:h-10 opacity-60 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </SectionContainer>
