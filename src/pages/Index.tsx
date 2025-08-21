@@ -614,33 +614,33 @@ export default function Index() {
 
             {/* Trust Elements */}
             <AnimatedSection delay={0.6} className="mt-8 md:mt-12">
-              <div className="bg-gray-50 rounded-2xl p-6 max-w-3xl mx-auto">
-                <div className="flex flex-col items-center justify-center space-y-4">
-                  <h2 className="text-lg font-bold text-center">Por que limitamos as vagas?</h2>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center space-x-2">
-                      <svg className="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>Implementação personalizada</span>
+              <div className="bg-gray-50 rounded-2xl p-6 md:p-8 max-w-3xl mx-auto">
+                <div className="flex flex-col items-center justify-center space-y-4 md:space-y-6">
+                  <h2 className="text-lg md:text-xl font-bold text-center">Por que limitamos as vagas?</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full">
+                    <div className="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div className="flex-shrink-0">
+                        <CheckCircle2 className="w-5 h-5 text-green-500" />
+                      </div>
+                      <span className="text-sm md:text-base text-gray-700">Implementação personalizada</span>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <svg className="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>Treinamento completo da equipe</span>
+                    <div className="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div className="flex-shrink-0">
+                        <CheckCircle2 className="w-5 h-5 text-green-500" />
+                      </div>
+                      <span className="text-sm md:text-base text-gray-700">Treinamento completo da equipe</span>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <svg className="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>Suporte dedicado 1:1</span>
+                    <div className="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div className="flex-shrink-0">
+                        <CheckCircle2 className="w-5 h-5 text-green-500" />
+                      </div>
+                      <span className="text-sm md:text-base text-gray-700">Suporte dedicado 1:1</span>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <svg className="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span>Garantia de resultados</span>
+                    <div className="flex items-center space-x-3 bg-white p-3 rounded-lg shadow-sm">
+                      <div className="flex-shrink-0">
+                        <CheckCircle2 className="w-5 h-5 text-green-500" />
+                      </div>
+                      <span className="text-sm md:text-base text-gray-700">Garantia de resultados</span>
                     </div>
                   </div>
                 </div>
